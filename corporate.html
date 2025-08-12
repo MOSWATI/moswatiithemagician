@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Corporate Service Entertainment — Moswatii the Magician</title>
+  <meta name="description" content="Understanding the corporate space is essential — discover why Moswatii Makgoba is the perfect choice for your next corporate event." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: Inter, system-ui, Segoe UI, Roboto, Helvetica, Arial, sans-serif }
+    .gold { color: #F5C242; }
+    .gold-bg { background-color: #F5C242; }
+    .no-scroll { overflow: hidden; }
+
+    /* Testimonial animation */
+    @keyframes fadeUp { 0% { opacity: 0; transform: translateY(12px); } 100% { opacity: 1; transform: translateY(0); } }
+    .fade-up { animation: fadeUp .6s ease-out both; }
+  </style>
+</head>
+<body class="bg-white text-slate-900">
+
+  <!-- TOP NAV BAR -->
+  <header id="topbar" class="sticky top-0 z-50 bg-black/95 text-white">
+    <div class="max-w-6xl mx-auto h-16 px-4 grid grid-cols-3 items-center">
+      <div></div>
+      <div class="flex justify-center">
+        <a href="index.html#home">
+          <img src="logo-white.png" alt="Moswatii Logo" class="h-10 w-auto" />
+        </a>
+      </div>
+      <div class="flex justify-end">
+        <button id="menuOpen" class="p-2 rounded-md hover:bg-white/10">
+          <span class="block w-6 h-0.5 bg-white mb-1"></span>
+          <span class="block w-6 h-0.5 bg-white mb-1"></span>
+          <span class="block w-6 h-0.5 bg-white"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- FULLSCREEN MENU -->
+  <div id="menuOverlay" class="fixed inset-0 z-50 hidden">
+    <div id="menuBackdrop" class="absolute inset-0 bg-black/80"></div>
+    <div class="relative z-10 h-full w-full flex items-center justify-center">
+      <div class="text-center text-white px-6">
+        <button id="menuClose" class="absolute top-5 right-5 p-2 hover:bg-white/10">✕</button>
+        <nav class="space-y-4 text-2xl font-semibold">
+          <a href="index.html#home" class="block hover:opacity-90">Home</a>
+          <a href="introduction.html" class="block hover:opacity-90">Introduction</a>
+          <a href="corporate.html" class="block hover:opacity-90">Corporate Service Entertainment</a>
+          <a href="fire-breathing.html" class="block hover:opacity-90">Fire Breathing Magician</a>
+          <a href="gallery.html" class="block hover:opacity-90">Gallery</a>
+          <a href="store.html" class="block hover:opacity-90">Store</a>
+          <a href="booking.html" class="block hover:opacity-90">Bookings</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE HEADER -->
+  <section class="max-w-6xl mx-auto px-4 pt-10 pb-6 text-center">
+    <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">
+      <span class="gold">Understanding the corporate space</span> is essential
+    </h1>
+    <div class="mt-5 flex justify-center">
+      <span class="gold-bg h-1 w-24 rounded-full"></span>
+    </div>
+  </section>
+
+  <!-- INTRO IMAGE + TEXT -->
+  <main class="max-w-6xl mx-auto px-4 pb-12">
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      <figure class="order-2 md:order-1">
+        <!-- Use your transparent cut-out as corporate-portrait.png -->
+        <img
+          src="corporate-portrait.png"
+          alt="Moswatii performing magic"
+          loading="lazy" decoding="async"
+          class="w-[320px] sm:w-[420px] md:w-[480px] lg:w-[540px] h-auto object-contain mx-auto md:mx-0"
+        />
+      </figure>
+      <article class="order-1 md:order-2">
+        <h2 class="text-xl font-semibold mb-3">Why Moswatii the Magician is the perfect fit for your corporate event</h2>
+        <p class="mb-4 text-slate-700 leading-relaxed">
+          Corporate entertainment is more than tricks on a stage — it’s strategy. It’s attention to detail, brand alignment, clear communication, and a performance that supports your event goals. That’s the standard I bring to every brief.
+        </p>
+        <p class="mb-4 text-slate-700 leading-relaxed">
+          I value the details because they matter: a sharp dress code, a clear confident voice, and sensitivity to your guests’ branding and culture. My material for corporate environments is engaging, sophisticated and unforgettable — chosen to reflect my passion for the art and to deliver real impact.
+        </p>
+      </article>
+    </div>
+
+    <!-- CORPORATE USE-CASES (GREY BOXES) -->
+    <section class="max-w-6xl mx-auto px-4 py-8">
+      <h3 class="text-lg font-semibold text-center">Where my work shines</h3>
+      <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="p-5 text-center rounded-2xl bg-slate-100 text-slate-900 border border-slate-300 shadow">
+          <div class="text-sm" style="color:#F5C242">Premium Functions</div>
+          <div class="mt-1 font-semibold">VIP Events & Gala Dinners</div>
+        </div>
+        <div class="p-5 text-center rounded-2xl bg-slate-100 text-slate-900 border border-slate-300 shadow">
+          <div class="text-sm" style="color:#F5C242">Brand Moments</div>
+          <div class="mt-1 font-semibold">Product Launches & Ceremonies</div>
+        </div>
+        <div class="p-5 text-center rounded-2xl bg-slate-100 text-slate-900 border border-slate-300 shadow">
+          <div class="text-sm" style="color:#F5C242">Thought Leadership</div>
+          <div class="mt-1 font-semibold">Business Conferences</div>
+        </div>
+        <div class="p-5 text-center rounded-2xl bg-slate-100 text-slate-900 border border-slate-300 shadow">
+          <div class="text-sm" style="color:#F5C242">Celebrate Wins</div>
+          <div class="mt-1 font-semibold">Year-End Functions</div>
+        </div>
+        <div class="p-5 text-center rounded-2xl bg-slate-100 text-slate-900 border border-slate-300 shadow">
+          <div class="text-sm" style="color:#F5C242">Attention Magnets</div>
+          <div class="mt-1 font-semibold">Trade Shows & Expos</div>
+        </div>
+        <div class="p-5 text-center rounded-2xl bg-slate-100 text-slate-900 border border-slate-300 shadow">
+          <div class="text-sm" style="color:#F5C242">Polished Presence</div>
+          <div class="mt-1 font-semibold">Awards Nights & MC</div>
+        </div>
+        <div class="p-5 text-center rounded-2xl bg-slate-100 text-slate-900 border border-slate-300 shadow">
+          <div class="text-sm" style="color:#F5C242">Leadership</div>
+          <div class="mt-1 font-semibold">Executive Retreats</div>
+        </div>
+        <div class="p-5 text-center rounded-2xl bg-slate-100 text-slate-900 border border-slate-300 shadow">
+          <div class="text-sm" style="color:#F5C242">Relationships</div>
+          <div class="mt-1 font-semibold">Hospitality Suites & Client Entertainment</div>
+        </div>
+        <div class="p-5 text-center rounded-2xl bg-slate-100 text-slate-900 border border-slate-300 shadow">
+          <div class="text-sm" style="color:#F5C242">Team Culture</div>
+          <div class="mt-1 font-semibold">Staff Appreciation & Team Socials</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIAL (gold quote + fade-up) -->
+    <section class="max-w-4xl mx-auto px-4 py-10">
+      <div class="relative bg-white border border-slate-200 rounded-2xl shadow-sm p-6 fade-up">
+        <!-- Gold quote mark -->
+        <div class="absolute -top-4 left-6 text-5xl leading-none gold select-none">“</div>
+
+        <div class="grid md:grid-cols-3 gap-6 items-center mt-2">
+          <!-- Replace with your group photo -->
+          <img src="testimonial-group.jpg" alt="Moswatii with happy corporate clients"
+               class="md:col-span-1 w-full h-auto rounded-2xl object-cover aspect-[4/3] bg-slate-100" loading="lazy" decoding="async" />
+          <div class="md:col-span-2">
+            <h4 class="font-semibold">What clients say</h4>
+            <p class="mt-3 text-slate-700 leading-relaxed">
+              We highly recommend <strong>Moswatii</strong> to anyone looking to make an unforgettable impression.
+              His magic is captivating, his audience work is warm yet professional, and he elevated our event from start to finish.
+            </p>
+            <p class="mt-2 text-sm text-slate-500">— Corporate Events Team</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHECK AVAILABILITY CTA -->
+    <section class="max-w-6xl mx-auto px-4 pb-12 text-center">
+      <a href="booking.html"
+         class="inline-flex items-center justify-center px-8 py-3 rounded-2xl bg-slate-900 text-white font-semibold shadow hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-slate-400">
+        Check Availability
+      </a>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-black text-white">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-center text-sm">
+      © 2025 All Rights Reserved – Sponsored by Moswatii the Magician PTY LTD
+    </div>
+  </footer>
+
+  <script>
+    // Menu toggle
+    (function(){
+      const body = document.body;
+      const open = document.getElementById('menuOpen');
+      const close = document.getElementById('menuClose');
+      const overlay = document.getElementById('menuOverlay');
+      const backdrop = document.getElementById('menuBackdrop');
+      function showMenu(){ overlay.classList.remove('hidden'); body.classList.add('no-scroll'); }
+      function hideMenu(){ overlay.classList.add('hidden'); body.classList.remove('no-scroll'); }
+      open.addEventListener('click', showMenu);
+      if(close) close.addEventListener('click', hideMenu);
+      if(backdrop) backdrop.addEventListener('click', hideMenu);
+      document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') hideMenu(); });
+    })();
+  </script>
+</body>
+</html>

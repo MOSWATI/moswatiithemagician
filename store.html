@@ -1,49 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Moswati Store</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Store — Moswatii the Magician</title>
+  <meta name="description" content="Official Moswatii the Magician merch — logo t-shirts and a signed deck of cards." />
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="icon" href="images/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: Inter, system-ui, Segoe UI, Roboto, Helvetica, Arial, sans-serif }
+    .no-scroll { overflow: hidden; }
+    .gold { color:#F5C242 }
+    .gold-bg { background:#F5C242 }
+    .card { background:white; border:1px solid rgb(226,232,240); border-radius:1rem; box-shadow:0 4px 14px rgba(15,23,42,.06) }
+    .btn { transition: transform .12s ease; }
+    .btn:active { transform: scale(.98); }
+    input::-webkit-outer-spin-button,input::-webkit-inner-spin-button{ -webkit-appearance:none; margin:0 }
+    input[type=number]{ -moz-appearance:textfield }
+  </style>
 </head>
-<body class="bg-black text-white font-sans">
-  <!-- Store Header -->
-  <header class="p-4 flex justify-between items-center border-b border-gray-700">
-    <h1 class="text-2xl font-bold">Moswati's Magic Store</h1>
-    <a href="index.html" class="text-yellow-500 hover:underline">← Back to Main Website</a>
+<body class="bg-white text-slate-900">
+
+  <!-- TOP NAV BAR -->
+  <header id="topbar" class="sticky top-0 z-50 bg-black/95 text-white">
+    <div class="max-w-6xl mx-auto h-16 px-4 grid grid-cols-3 items-center">
+      <div></div>
+      <div class="flex justify-center">
+        <a href="index.html#home" title="Back to Home">
+          <img src="logo-white.png" alt="Moswatii Logo" class="h-10 w-auto" />
+        </a>
+      </div>
+      <div class="flex justify-end">
+        <button id="menuOpen" aria-label="Open menu" class="p-2 rounded-md hover:bg-white/10">
+          <span class="block w-6 h-0.5 bg-white mb-1"></span>
+          <span class="block w-6 h-0.5 bg-white mb-1"></span>
+          <span class="block w-6 h-0.5 bg-white"></span>
+        </button>
+      </div>
+    </div>
   </header>
 
-  <!-- Store Items -->
-  <section class="p-8 max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-    <!-- T-Shirt 1 -->
-    <div class="bg-gray-800 rounded-lg p-4 text-center">
-      <img src="images/t-shirt1.jpg" alt="T-Shirt 1" class="mb-4 rounded w-full h-auto" />
-      <h2 class="text-xl font-bold mb-2">Moswati Magic T-Shirt 1</h2>
-      <p class="text-yellow-400 mb-2">R999</p>
-      <a href="https://wa.me/27820816192?text=Hi%20Moswati%2C%20I'm%20interested%20in%20buying%20T-Shirt%201" target="_blank" class="bg-yellow-500 text-black px-4 py-2 rounded inline-block">Order on WhatsApp</a>
+  <!-- FULLSCREEN OVERLAY MENU -->
+  <div id="menuOverlay" class="fixed inset-0 z-50 hidden">
+    <div id="menuBackdrop" class="absolute inset-0 bg-black/80"></div>
+    <div class="relative z-10 h-full w-full flex items-center justify-center">
+      <div class="text-center text-white px-6">
+        <button id="menuClose" aria-label="Close menu" class="absolute top-5 right-5 p-2 hover:bg-white/10">✕</button>
+        <nav class="space-y-4 text-2xl font-semibold">
+          <a href="index.html#home" class="block hover:opacity-90">Home</a>
+          <a href="introduction.html" class="block hover:opacity-90">Introduction</a>
+          <a href="corporate.html" class="block hover:opacity-90">Corporate Service Entertainment</a>
+          <a href="fire-breathing.html" class="block hover:opacity-90">Fire Breathing Magician</a>
+          <a href="gallery.html" class="block hover:opacity-90">Gallery</a>
+          <a href="store.html" class="block hover:opacity-90">Store</a>
+          <a href="booking.html" class="block hover:opacity-90">Bookings</a>
+        </nav>
+      </div>
     </div>
+  </div>
 
-    <!-- T-Shirt 2 -->
-    <div class="bg-gray-800 rounded-lg p-4 text-center">
-      <img src="images/t-shirt2.jpg" alt="T-Shirt 2" class="mb-4 rounded w-full h-auto" />
-      <h2 class="text-xl font-bold mb-2">Moswati Magic T-Shirt 2</h2>
-      <p class="text-yellow-400 mb-2">R999</p>
-      <a href="https://wa.me/27820816192?text=Hi%20Moswati%2C%20I'm%20interested%20in%20buying%20T-Shirt%202" target="_blank" class="bg-yellow-500 text-black px-4 py-2 rounded inline-block">Order on WhatsApp</a>
-    </div>
-
-    <!-- Signed Deck of Cards -->
-    <div class="bg-gray-800 rounded-lg p-4 text-center">
-      <img src="images/deck.jpg" alt="Signed Deck" class="mb-4 rounded w-full h-auto" />
-      <h2 class="text-xl font-bold mb-2">Signed Deck of Cards</h2>
-      <p class="text-yellow-400 mb-2">R550</p>
-      <a href="https://wa.me/27820816192?text=Hi%20Moswati%2C%20I'd%20love%20to%20order%20your%20signed%20deck%20of%20cards" target="_blank" class="bg-yellow-500 text-black px-4 py-2 rounded inline-block">Order on WhatsApp</a>
+  <!-- PAGE HEADER -->
+  <section class="max-w-6xl mx-auto px-4 pt-10 pb-6 text-center">
+    <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Official Store</h1>
+    <p class="mt-2 text-slate-600 max-w-2xl mx-auto">
+      Grab a logo tee or a signed deck — message me on WhatsApp to order.
+    </p>
+    <div class="mt-4 flex justify-center">
+      <span class="gold-bg h-1 w-24 rounded-full"></span>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="text-center p-4 text-gray-500 text-sm border-t border-gray-700">
-    &copy; 2025 Moswati the Magician. All rights reserved.
+  <!-- PRODUCTS -->
+  <main class="max-w-6xl mx-auto px-4 pb-12">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- T-SHIRT BLACK -->
+      <div class="card p-4 flex flex-col">
+        <div class="overflow-hidden rounded-xl border border-slate-200">
+          <img src="tshirt-black.jpg" alt="Logo T-Shirt — Black" class="w-full h-56 object-cover" loading="lazy" decoding="async" />
+        </div>
+        <div class="mt-4">
+          <h2 class="text-lg font-semibold">Logo T-Shirt — Black</h2>
+          <div class="mt-1 text-slate-600">Soft cotton, premium print</div>
+          <div class="mt-2 font-extrabold">R550</div>
+          <div class="mt-3 grid grid-cols-2 gap-3">
+            <label class="text-sm">
+              Size
+              <select id="size-black" class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2">
+                <option value="S">S</option><option value="M" selected>M</option><option value="L">L</option><option value="XL">XL</option>
+              </select>
+            </label>
+            <label class="text-sm">
+              Qty
+              <input id="qty-black" type="number" min="1" value="1" class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2">
+            </label>
+          </div>
+          <button
+            class="btn mt-4 w-full inline-flex items-center justify-center px-4 py-2 rounded-xl bg-slate-900 text-white font-semibold hover:opacity-90"
+            onclick="buyWhatsApp({product:'Logo T-Shirt', variant:'Black', price:'R550', sizeId:'size-black', qtyId:'qty-black'})">
+            Buy via WhatsApp
+          </button>
+        </div>
+      </div>
+
+      <!-- T-SHIRT WHITE -->
+      <div class="card p-4 flex flex-col">
+        <div class="overflow-hidden rounded-xl border border-slate-200">
+          <img src="tshirt-white.jpg" alt="Logo T-Shirt — White" class="w-full h-56 object-cover" loading="lazy" decoding="async" />
+        </div>
+        <div class="mt-4">
+          <h2 class="text-lg font-semibold">Logo T-Shirt — White</h2>
+          <div class="mt-1 text-slate-600">Soft cotton, premium print</div>
+          <div class="mt-2 font-extrabold">R550</div>
+          <div class="mt-3 grid grid-cols-2 gap-3">
+            <label class="text-sm">
+              Size
+              <select id="size-white" class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2">
+                <option value="S">S</option><option value="M" selected>M</option><option value="L">L</option><option value="XL">XL</option>
+              </select>
+            </label>
+            <label class="text-sm">
+              Qty
+              <input id="qty-white" type="number" min="1" value="1" class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2">
+            </label>
+          </div>
+          <button
+            class="btn mt-4 w-full inline-flex items-center justify-center px-4 py-2 rounded-xl bg-slate-900 text-white font-semibold hover:opacity-90"
+            onclick="buyWhatsApp({product:'Logo T-Shirt', variant:'White', price:'R550', sizeId:'size-white', qtyId:'qty-white'})">
+            Buy via WhatsApp
+          </button>
+        </div>
+      </div>
+
+      <!-- SIGNED DECK -->
+      <div class="card p-4 flex flex-col">
+        <div class="overflow-hidden rounded-xl border border-slate-200">
+          <img src="deck.jpg" alt="Signed Deck of Cards" class="w-full h-56 object-cover" loading="lazy" decoding="async" />
+        </div>
+        <div class="mt-4">
+          <h2 class="text-lg font-semibold">Signed Deck of Cards</h2>
+          <div class="mt-1 text-slate-600">Hand-signed by Moswatii</div>
+          <div class="mt-2 font-extrabold">R250</div>
+          <div class="mt-3 grid grid-cols-2 gap-3">
+            <div class="text-sm">
+              Variant
+              <input type="text" value="Standard" id="variant-deck" class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2" />
+            </div>
+            <label class="text-sm">
+              Qty
+              <input id="qty-deck" type="number" min="1" value="1" class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2">
+            </label>
+          </div>
+          <button
+            class="btn mt-4 w-full inline-flex items-center justify-center px-4 py-2 rounded-xl bg-slate-900 text-white font-semibold hover:opacity-90"
+            onclick="buyWhatsApp({product:'Signed Deck of Cards', variantId:'variant-deck', price:'R250', qtyId:'qty-deck'})">
+            Buy via WhatsApp
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Info note -->
+    <p class="mt-8 text-center text-sm text-slate-500">
+      Secure payment & delivery arranged directly on WhatsApp after you place your request.
+    </p>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-black text-white">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-center text-sm">
+      © 2025 All Rights Reserved – Sponsored by Moswatii the Magician PTY LTD
+    </div>
   </footer>
+
+  <script>
+    // Menu controls
+    (function(){
+      const body = document.body;
+      const open = document.getElementById('menuOpen');
+      const overlay = document.getElementById('menuOverlay');
+      const closeBtn = document.getElementById('menuClose');
+      const backdrop = document.getElementById('menuBackdrop');
+      function openMenu(){ overlay.classList.remove('hidden'); body.classList.add('no-scroll'); }
+      function closeMenu(){ overlay.classList.add('hidden'); body.classList.remove('no-scroll'); }
+      open.addEventListener('click', openMenu);
+      if(closeBtn) closeBtn.addEventListener('click', closeMenu);
+      if(backdrop) backdrop.addEventListener('click', closeMenu);
+      document.addEventListener('keydown', e => { if(e.key === 'Escape') closeMenu(); });
+    })();
+
+    // WhatsApp buy handler
+    function buyWhatsApp(cfg){
+      const waNumber = '278208167192'; // +27 82 081 67192
+      const qty = cfg.qtyId ? Math.max(1, parseInt(document.getElementById(cfg.qtyId).value || '1', 10)) : 1;
+      const size = cfg.sizeId ? document.getElementById(cfg.sizeId).value : null;
+      const variant = cfg.variant ? cfg.variant : (cfg.variantId ? document.getElementById(cfg.variantId).value : null);
+
+      let lines = [];
+      lines.push('Hi Moswatii, I would like to order:');
+      lines.push(`• Product: ${cfg.product}`);
+      if (variant) lines.push(`• Variant: ${variant}`);
+      if (size) lines.push(`• Size: ${size}`);
+      lines.push(`• Quantity: ${qty}`);
+      lines.push(`• Price: ${cfg.price}`);
+      lines.push('');
+      lines.push('Please confirm total price, payment and delivery options. Thank you!');
+
+      const msg = encodeURIComponent(lines.join('\n'));
+      const url = `https://wa.me/${waNumber}?text=${msg}`;
+      window.open(url, '_blank');
+    }
+  </script>
 </body>
 </html>

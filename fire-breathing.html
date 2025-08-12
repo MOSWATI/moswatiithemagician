@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fire Breathing Magician — Moswatii the Magician</title>
+  <meta name="description" content="Moswatii Makgoba — Fire Breathing Magician for corporate events. High-impact visuals delivered with discipline, safety and precision." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: Inter, system-ui, Segoe UI, Roboto, Helvetica, Arial, sans-serif }
+    .no-scroll { overflow: hidden; }
+    .gold { color:#F5C242 }
+    .gold-bg { background:#F5C242 }
+    @keyframes fadeUp { 0%{opacity:0;transform:translateY(12px)} 100%{opacity:1;transform:translateY(0)} }
+    .fade-up { animation: fadeUp .6s ease-out both; }
+  </style>
+</head>
+<body class="bg-black text-white">
+
+  <!-- TOP NAV BAR -->
+  <header id="topbar" class="sticky top-0 z-50 bg-black/95 text-white">
+    <div class="max-w-6xl mx-auto h-16 px-4 grid grid-cols-3 items-center">
+      <div></div>
+      <div class="flex justify-center">
+        <a href="index.html#home" title="Back to Home">
+          <img src="logo-white.png" alt="Moswatii Logo" class="h-10 w-auto" />
+        </a>
+      </div>
+      <div class="flex justify-end">
+        <button id="menuOpen" aria-label="Open menu" class="p-2 rounded-md hover:bg-white/10">
+          <span class="block w-6 h-0.5 bg-white mb-1"></span>
+          <span class="block w-6 h-0.5 bg-white mb-1"></span>
+          <span class="block w-6 h-0.5 bg-white"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- FULLSCREEN OVERLAY MENU -->
+  <div id="menuOverlay" class="fixed inset-0 z-50 hidden">
+    <div id="menuBackdrop" class="absolute inset-0 bg-black/80"></div>
+    <div class="relative z-10 h-full w-full flex items-center justify-center">
+      <div class="text-center text-white px-6">
+        <button id="menuClose" aria-label="Close menu" class="absolute top-5 right-5 p-2 hover:bg-white/10">✕</button>
+        <nav class="space-y-4 text-2xl font-semibold">
+          <a href="index.html#home" class="block hover:opacity-90">Home</a>
+          <a href="introduction.html" class="block hover:opacity-90">Introduction</a>
+          <a href="corporate.html" class="block hover:opacity-90">Corporate Service Entertainment</a>
+          <a href="fire-breathing.html" class="block hover:opacity-90">Fire Breathing Magician</a>
+          <a href="gallery.html" class="block hover:opacity-90">Gallery</a>
+          <a href="store.html" class="block hover:opacity-90">Store</a>
+          <a href="booking.html" class="block hover:opacity-90">Bookings</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE HEADER -->
+  <section class="max-w-6xl mx-auto px-4 pt-10 pb-4 text-center">
+    <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
+      Fire Breathing Magician
+    </h1>
+    <div class="mt-4 flex justify-center">
+      <span class="gold-bg h-1 w-24 rounded-full"></span>
+    </div>
+  </section>
+
+  <!-- FULL, CENTER-STAGE ACTION IMAGE -->
+  <section class="px-4">
+    <img
+      src="fire-action.jpg"
+      alt="Moswatii performing a live fire-breathing act"
+      class="w-full max-w-5xl mx-auto rounded-2xl shadow-2xl fade-up"
+      loading="lazy" decoding="async"
+    />
+  </section>
+
+  <!-- COPY -->
+  <main class="max-w-5xl mx-auto px-4 py-10">
+    <article class="space-y-5 text-slate-200 leading-relaxed">
+      <p class="text-lg">
+        A bit of danger is exciting — when it’s controlled. <strong>Moswatii the Magician</strong> brings you a fire performance that’s bold, cinematic and carefully managed from the first spark to the final bow.
+      </p>
+      <p>
+        Fire is not just a stunt; it’s discipline. I’ve trained to understand flame behavior, fuels and timing so your audience can enjoy the thrill without worry. Every appearance is planned with the venue and production team to fit the space and your show flow.
+      </p>
+      <p>
+        The best fire magic happens outdoors or in large, well-ventilated spaces with a clear performance zone. I’ve performed under tough conditions — wind, tight run-sheets, unique staging — and those challenges built the calm, prepared approach I bring to your event.
+      </p>
+    </article>
+
+    <!-- Safety note -->
+    <section class="mt-8 bg-neutral-900/60 border border-neutral-800 rounded-2xl p-6">
+      <h2 class="text-lg font-semibold">Safety, always</h2>
+      <ul class="mt-3 grid sm:grid-cols-2 gap-3 text-sm text-slate-300">
+        <li>• Pre-event risk assessment and brief with your team</li>
+        <li>• Fire blankets/extinguishers on hand & clear guest distance</li>
+        <li>• Non-flammable costuming & controlled fuel handling</li>
+        <li>• Venue approval required; outdoor/ventilated areas preferred</li>
+      </ul>
+      <p class="mt-3 text-xs text-slate-400">
+        Certain venues/municipalities may require permits or additional insurance — I’ll advise during booking.
+      </p>
+    </section>
+
+    <!-- CTA -->
+    <div class="mt-10 flex justify-center">
+      <a href="booking.html"
+         class="inline-flex items-center justify-center px-7 py-3 rounded-2xl bg-white text-black font-semibold shadow hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-white/50">
+        Check Availability
+      </a>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-black text-white">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-center text-sm">
+      © 2025 All Rights Reserved – Sponsored by Moswatii the Magician PTY LTD
+    </div>
+  </footer>
+
+  <script>
+    // Menu controls
+    (function(){
+      const body = document.body;
+      const open = document.getElementById('menuOpen');
+      const close = document.getElementById('menuClose');
+      const overlay = document.getElementById('menuOverlay');
+      const backdrop = document.getElementById('menuBackdrop');
+      function showMenu(){ overlay.classList.remove('hidden'); body.classList.add('no-scroll'); }
+      function hideMenu(){ overlay.classList.add('hidden'); body.classList.remove('no-scroll'); }
+      open.addEventListener('click', showMenu);
+      if(close) close.addEventListener('click', hideMenu);
+      if(backdrop) backdrop.addEventListener('click', hideMenu);
+      document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') hideMenu(); });
+    })();
+  </script>
+</body>
+</html>

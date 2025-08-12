@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gallery — Moswatii the Magician</title>
+  <meta name="description" content="Photo gallery of Moswatii the Magician performing at corporate events, galas and brand launches." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: Inter, system-ui, Segoe UI, Roboto, Helvetica, Arial, sans-serif }
+    .no-scroll { overflow: hidden; }
+    .gold { color:#F5C242 }
+    .gold-bg { background:#F5C242 }
+    /* Lightbox */
+    .lb-hidden { opacity:0; pointer-events:none; }
+    .lb-shown  { opacity:1; pointer-events:auto; }
+    .lb-backdrop { background: rgba(0,0,0,.92); }
+    .btn { transition: transform .12s ease; }
+    .btn:active { transform: scale(.98); }
+  </style>
+</head>
+<body class="bg-white text-slate-900">
+
+  <!-- TOP NAV BAR -->
+  <header id="topbar" class="sticky top-0 z-50 bg-black/95 text-white">
+    <div class="max-w-6xl mx-auto h-16 px-4 grid grid-cols-3 items-center">
+      <div></div>
+      <div class="flex justify-center">
+        <a href="index.html#home" title="Back to Home">
+          <img src="logo-white.png" alt="Moswatii Logo" class="h-10 w-auto" />
+        </a>
+      </div>
+      <div class="flex justify-end">
+        <button id="menuOpen" aria-label="Open menu" class="p-2 rounded-md hover:bg-white/10">
+          <span class="block w-6 h-0.5 bg-white mb-1"></span>
+          <span class="block w-6 h-0.5 bg-white mb-1"></span>
+          <span class="block w-6 h-0.5 bg-white"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- FULLSCREEN OVERLAY MENU -->
+  <div id="menuOverlay" class="fixed inset-0 z-50 hidden">
+    <div id="menuBackdrop" class="absolute inset-0 bg-black/80"></div>
+    <div class="relative z-10 h-full w-full flex items-center justify-center">
+      <div class="text-center text-white px-6">
+        <button id="menuClose" aria-label="Close menu" class="absolute top-5 right-5 p-2 hover:bg-white/10">✕</button>
+        <nav class="space-y-4 text-2xl font-semibold">
+          <a href="index.html#home" class="block hover:opacity-90">Home</a>
+          <a href="introduction.html" class="block hover:opacity-90">Introduction</a>
+          <a href="corporate.html" class="block hover:opacity-90">Corporate Service Entertainment</a>
+          <a href="fire-breathing.html" class="block hover:opacity-90">Fire Breathing Magician</a>
+          <a href="gallery.html" class="block hover:opacity-90">Gallery</a>
+          <a href="store.html" class="block hover:opacity-90">Store</a>
+          <a href="booking.html" class="block hover:opacity-90">Bookings</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE HEADER -->
+  <section class="max-w-6xl mx-auto px-4 pt-10 pb-6 text-center">
+    <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Gallery</h1>
+    <p class="mt-2 text-slate-600 max-w-2xl mx-auto">
+      Highlights from corporate shows, gala dinners, launches and close-up sets.
+    </p>
+    <div class="mt-4 flex justify-center">
+      <span class="gold-bg h-1 w-24 rounded-full"></span>
+    </div>
+  </section>
+
+  <!-- GALLERY GRID (8 images) -->
+  <main class="max-w-6xl mx-auto px-4 pb-10">
+    <div id="gallery" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <!-- Replace src with your real files if names differ -->
+      <a href="gallery-1.jpg" class="group block relative overflow-hidden rounded-2xl border border-slate-200">
+        <img src="gallery-1.jpg" alt="Moswatii performance 1" loading="lazy" decoding="async"
+             class="h-40 sm:h-48 md:h-44 lg:h-44 w-full object-cover transition-transform duration-300 group-hover:scale-105" />
+      </a>
+      <a href="gallery-2.jpg" class="group block relative overflow-hidden rounded-2xl border border-slate-200">
+        <img src="gallery-2.jpg" alt="Moswatii performance 2" loading="lazy" decoding="async"
+             class="h-40 sm:h-48 md:h-44 lg:h-44 w-full object-cover transition-transform duration-300 group-hover:scale-105" />
+      </a>
+      <a href="gallery-3.jpg" class="group block relative overflow-hidden rounded-2xl border border-slate-200">
+        <img src="gallery-3.jpg" alt="Moswatii performance 3" loading="lazy" decoding="async"
+             class="h-40 sm:h-48 md:h-44 lg:h-44 w-full object-cover transition-transform duration-300 group-hover:scale-105" />
+      </a>
+      <a href="gallery-4.jpg" class="group block relative overflow-hidden rounded-2xl border border-slate-200">
+        <img src="gallery-4.jpg" alt="Moswatii performance 4" loading="lazy" decoding="async"
+             class="h-40 sm:h-48 md:h-44 lg:h-44 w-full object-cover transition-transform duration-300 group-hover:scale-105" />
+      </a>
+      <a href="gallery-5.jpg" class="group block relative overflow-hidden rounded-2xl border border-slate-200">
+        <img src="gallery-5.jpg" alt="Moswatii performance 5" loading="lazy" decoding="async"
+             class="h-40 sm:h-48 md:h-44 lg:h-44 w-full object-cover transition-transform duration-300 group-hover:scale-105" />
+      </a>
+      <a href="gallery-6.jpg" class="group block relative overflow-hidden rounded-2xl border border-slate-200">
+        <img src="gallery-6.jpg" alt="Moswatii performance 6" loading="lazy" decoding="async"
+             class="h-40 sm:h-48 md:h-44 lg:h-44 w-full object-cover transition-transform duration-300 group-hover:scale-105" />
+      </a>
+      <a href="gallery-7.jpg" class="group block relative overflow-hidden rounded-2xl border border-slate-200">
+        <img src="gallery-7.jpg" alt="Moswatii performance 7" loading="lazy" decoding="async"
+             class="h-40 sm:h-48 md:h-44 lg:h-44 w-full object-cover transition-transform duration-300 group-hover:scale-105" />
+      </a>
+      <a href="gallery-8.jpg" class="group block relative overflow-hidden rounded-2xl border border-slate-200">
+        <img src="gallery-8.jpg" alt="Moswatii performance 8" loading="lazy" decoding="async"
+             class="h-40 sm:h-48 md:h-44 lg:h-44 w-full object-cover transition-transform duration-300 group-hover:scale-105" />
+      </a>
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-10 flex justify-center">
+      <a href="booking.html"
+         class="inline-flex items-center justify-center px-7 py-3 rounded-2xl bg-slate-900 text-white font-semibold shadow hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-slate-400">
+        Check Availability
+      </a>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-black text-white">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-center text-sm">
+      © 2025 All Rights Reserved – Sponsored by Moswatii the Magician PTY LTD
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX (fullscreen viewer) -->
+  <div id="lightbox" class="fixed inset-0 z-[60] lb-hidden transition-opacity duration-200">
+    <div class="lb-backdrop absolute inset-0"></div>
+    <div class="relative z-10 h-full w-full flex items-center justify-center px-4">
+      <button id="lbClose" aria-label="Close" class="btn absolute top-4 right-4 p-2 rounded-md bg-white/10 text-white hover:bg-white/20">✕</button>
+      <button id="lbPrev" aria-label="Previous" class="btn absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-md bg-white/10 text-white hover:bg-white/20">‹</button>
+      <img id="lbImg" alt="Gallery large" class="max-h-[86vh] w-auto rounded-xl shadow-2xl" />
+      <button id="lbNext" aria-label="Next" class="btn absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-md bg-white/10 text-white hover:bg-white/20">›</button>
+    </div>
+  </div>
+
+  <script>
+    // Menu controls
+    (function(){
+      const body = document.body;
+      const open = document.getElementById('menuOpen');
+      const overlay = document.getElementById('menuOverlay');
+      const closeBtn = document.getElementById('menuClose');
+      const backdrop = document.getElementById('menuBackdrop');
+      function openMenu(){ overlay.classList.remove('hidden'); body.classList.add('no-scroll'); }
+      function closeMenu(){ overlay.classList.add('hidden'); body.classList.remove('no-scroll'); }
+      open.addEventListener('click', openMenu);
+      if(closeBtn) closeBtn.addEventListener('click', closeMenu);
+      if(backdrop) backdrop.addEventListener('click', closeMenu);
+      document.addEventListener('keydown', e => { if(e.key === 'Escape') closeMenu(); });
+    })();
+
+    // Simple lightbox
+    (function(){
+      const anchors = Array.from(document.querySelectorAll('#gallery a'));
+      const lb = document.getElementById('lightbox');
+      const lbImg = document.getElementById('lbImg');
+      const lbClose = document.getElementById('lbClose');
+      const lbPrev = document.getElementById('lbPrev');
+      const lbNext = document.getElementById('lbNext');
+      let index = 0;
+
+      function show(i){
+        index = (i + anchors.length) % anchors.length;
+        lbImg.src = anchors[index].getAttribute('href');
+        lb.classList.remove('lb-hidden');
+        lb.classList.add('lb-shown');
+        document.body.classList.add('no-scroll');
+      }
+      function hide(){
+        lb.classList.add('lb-hidden');
+        lb.classList.remove('lb-shown');
+        document.body.classList.remove('no-scroll');
+        setTimeout(()=>{ lbImg.src = ''; }, 180);
+      }
+      function prev(){ show(index - 1); }
+      function next(){ show(index + 1); }
+
+      anchors.forEach((a, i) => {
+        a.addEventListener('click', (e) => {
+          e.preventDefault();
+          show(i);
+        });
+      });
+
+      lbClose.addEventListener('click', hide);
+      lb.querySelector('.lb-backdrop').addEventListener('click', hide);
+      lbPrev.addEventListener('click', prev);
+      lbNext.addEventListener('click', next);
+
+      document.addEventListener('keydown', (e) => {
+        if (lb.classList.contains('lb-shown')) {
+          if (e.key === 'Escape') hide();
+          if (e.key === 'ArrowLeft') prev();
+          if (e.key === 'ArrowRight') next();
+        }
+      });
+
+      // Basic touch swipe for mobile
+      let startX = null;
+      lb.addEventListener('touchstart', (e)=>{ startX = e.touches[0].clientX; }, {passive:true});
+      lb.addEventListener('touchend', (e)=>{
+        if(startX === null) return;
+        const dx = e.changedTouches[0].clientX - startX;
+        if (dx > 40) prev();
+        if (dx < -40) next();
+        startX = null;
+      }, {passive:true});
+    })();
+  </script>
+</body>
+</html>

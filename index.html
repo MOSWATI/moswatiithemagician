@@ -1,80 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Moswati the Magician</title>
+  <meta name="description" content="Transforming Business Events into Magical Experiences" />
+  <link rel="icon" href="favicon.png" type="image/png"> <!-- Favicon line added -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: Inter, system-ui, Segoe UI, Roboto, Helvetica, Arial, sans-serif }
+    .topbar { transition: transform 220ms ease; will-change: transform; }
+    .topbar--hidden { transform: translateY(-100%); }
+    .topbar--shown  { transform: translateY(0); }
+    .no-scroll { overflow: hidden; }
+  </style>
 </head>
-<body class="bg-black text-white font-sans">
-  <!-- Header -->
-  <header class="p-6 flex justify-between items-center border-b border-gray-700">
-    <img src="images/logo.png" alt="Moswati Logo" class="h-12" />
-    <nav>
-      <a href="store.html" class="text-yellow-400 hover:text-yellow-200 text-lg font-semibold">Visit My Store</a>
-    </nav>
+<body class="bg-white text-slate-900">
+
+  <!-- TOP NAV BAR (centered logo, hamburger on right, hides on scroll down) -->
+  <header id="topbar" class="topbar topbar--shown sticky top-0 z-50 bg-black/95 text-white">
+    <div class="max-w-6xl mx-auto h-16 px-4 grid grid-cols-3 items-center">
+      <!-- left spacer -->
+      <div></div>
+
+      <!-- center logo -->
+      <div class="flex justify-center">
+        <a href="#home" class="inline-flex items-center" title="Back to Home">
+          <img src="logo-white.png" alt="Moswati Logo" class="h-10 w-auto" />
+        </a>
+      </div>
+
+      <!-- right hamburger -->
+      <div class="flex justify-end">
+        <button id="menuOpen" aria-label="Open menu" class="p-2 rounded-md hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">
+          <span class="block w-6 h-0.5 bg-white mb-1"></span>
+          <span class="block w-6 h-0.5 bg-white mb-1"></span>
+          <span class="block w-6 h-0.5 bg-white"></span>
+        </button>
+      </div>
+    </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="text-center py-16 px-6">
-    <img src="images/logo.png" alt="Moswati Logo Center" class="mx-auto mb-6 h-28" />
-    <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Welcome to Moswati the Magician</h1>
-    <p class="text-lg text-gray-300 max-w-xl mx-auto">Creating unforgettable moments for top-tier corporate clients across South Africa and beyond.</p>
-  </section>
+  <!-- FULLSCREEN OVERLAY MENU -->
+  <div id="menuOverlay" class="fixed inset-0 z-50 hidden">
+    <!-- backdrop -->
+    <div id="menuBackdrop" class="absolute inset-0 bg-black/80 backdrop-blur-sm"></div>
 
-  <!-- About Moswati -->
-  <section class="px-6 py-10 max-w-4xl mx-auto">
-    <h2 class="text-3xl font-bold text-yellow-400 mb-4">About Moswati</h2>
-    <p class="text-gray-300 leading-relaxed">
-      Moswati is not just a magician; he's a consummate professional. With years of experience performing for international visitors to South Africa from all over the globe, he understands the importance of punctuality, reliability, and delivering a performance that exceeds expectations.
-    </p>
-  </section>
+    <!-- menu panel -->
+    <div class="relative z-10 h-full w-full flex items-center justify-center">
+      <div class="text-center text-white px-6">
+        <button id="menuClose" aria-label="Close menu" class="absolute top-5 right-5 p-2 rounded-md hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">
+          <!-- X icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
 
-  <!-- Services -->
-  <section class="bg-gray-900 py-10 px-6">
-    <h2 class="text-3xl font-bold text-center text-yellow-400 mb-8">Corporate Services</h2>
-    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
-      <div class="bg-yellow-500/10 p-6 rounded-xl shadow-lg border border-yellow-400">
-        <h3 class="text-xl font-bold mb-2 text-yellow-300">Customized Corporate Magic</h3>
-        <p class="text-gray-200">Tailored performances designed to highlight your brand, making events unforgettable and aligned with your goals.</p>
+        <nav class="space-y-4 text-2xl font-semibold">
+          <a href="index.html#home" class="block hover:opacity-90">Home</a>
+          <a href="introduction.html" class="block hover:opacity-90">Introduction</a>
+          <a href="corporate.html" class="block hover:opacity-90">Corporate Service Entertainment</a>
+          <a href="fire-breathing.html" class="block hover:opacity-90">Fire Breathing Magician</a>
+          <a href="gallery.html" class="block hover:opacity-90">Gallery</a>
+          <a href="store.html" class="block hover:opacity-90">Store</a>
+          <a href="booking.html" class="block hover:opacity-90">Bookings</a>
+        </nav>
       </div>
-      <div class="bg-yellow-500/10 p-6 rounded-xl shadow-lg border border-yellow-400">
-        <h3 class="text-xl font-bold mb-2 text-yellow-300">Product Launches & Ceremonies</h3>
-        <p class="text-gray-200">Enhance your product's big moment with mind-blowing illusions that wow clients, executives, and the media.</p>
-      </div>
-      <div class="bg-yellow-500/10 p-6 rounded-xl shadow-lg border border-yellow-400">
-        <h3 class="text-xl font-bold mb-2 text-yellow-300">Team Building Magic</h3>
-        <p class="text-gray-200">Foster teamwork and camaraderie with interactive magical sessions that are both entertaining and unifying.</p>
-      </div>
-      <div class="bg-yellow-500/10 p-6 rounded-xl shadow-lg border border-yellow-400">
-        <h3 class="text-xl font-bold mb-2 text-yellow-300">VIP Events & Gala Dinners</h3>
-        <p class="text-gray-200">Set an elite tone with high-end magic crafted for special guests, ensuring elegance and lasting impressions.</p>
+    </div>
+  </div>
+
+  <!-- HERO (image first, then text, then button) -->
+  <section id="home" class="max-w-6xl mx-auto px-4 pt-10 pb-14">
+    <div class="flex justify-center">
+      <img src="hero-center.png" alt="Moswati the Magician" 
+           class="max-w-full h-auto w-[1100px] md:w-[1200px] lg:w-[1300px] xl:w-[1400px]" />
+    </div>
+
+    <div class="mt-8 text-center max-w-3xl mx-auto">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">
+        Transforming Business Events into Magical Experiences
+      </h1>
+      <p class="mt-4 text-slate-600 md:text-lg leading-relaxed">
+        From high-impact stage performances to close-up icebreakers, I help brands create moments their guests never forget.
+      </p>
+
+      <div class="mt-6">
+        <a href="booking.html"
+           class="inline-flex items-center justify-center px-7 py-3 rounded-2xl bg-slate-900 text-white font-semibold shadow hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-slate-400">
+          Check Availability
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- Testimonial -->
-  <section class="px-6 py-10 max-w-4xl mx-auto text-center">
-    <img src="images/moswati-smiling.jpg" alt="Moswati with Client" class="mx-auto rounded-full h-40 w-40 object-cover mb-4" />
-    <blockquote class="text-xl italic text-gray-300">“I highly recommend Moswati to anyone looking to make an unforgettable impression. His magic is captivating, and his professionalism is unmatched.”</blockquote>
-  </section>
+  <!-- SPACE BEFORE LOGOS -->
+  <div class="h-16"></div>
 
-  <!-- Contact Section -->
-  <section class="bg-gray-900 py-10 px-6">
-    <h2 class="text-3xl font-bold text-center text-yellow-400 mb-6">Get in Touch</h2>
-    <div class="max-w-3xl mx-auto text-center space-y-4">
-      <p class="text-lg text-gray-300">Email: <a href="mailto:moswatimagic@gmail.com" class="text-yellow-400 hover:underline">moswatimagic@gmail.com</a></p>
-      <p class="text-lg text-gray-300">Phone / WhatsApp: <a href="https://wa.me/27820816192" target="_blank" class="text-yellow-400 hover:underline">+27 82 081 6192</a></p>
-      <div class="flex justify-center mt-4">
-        <img src="images/whatsapp-qr.png" alt="WhatsApp QR Code" class="h-40 w-40 border-4 border-yellow-400 rounded-lg shadow-lg" />
+  <!-- TRUSTED BY / CLIENT LOGOS (black band) -->
+  <section class="bg-black py-8" aria-label="Client logos: SABC 1, Kwalata Game Lodge, Standard Bank, Coca-Cola, MTN Group, Department of Sport Arts and Culture">
+    <div class="max-w-6xl mx-auto px-4 text-center text-white">
+      <p class="text-sm uppercase tracking-wider text-slate-300 mb-6">Proudly performed for</p>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 items-center gap-8">
+        <img src="logo-sabc1.png" alt="SABC 1" class="mx-auto h-10 w-auto object-contain" loading="lazy" />
+        <img src="logo-kwalata.png" alt="Kwalata Game Lodge" class="mx-auto h-10 w-auto object-contain" loading="lazy" />
+        <img src="logo-standardbank.png" alt="Standard Bank" class="mx-auto h-10 w-auto object-contain" loading="lazy" />
+        <img src="logo-cocacola.png" alt="Coca-Cola" class="mx-auto h-10 w-auto object-contain" loading="lazy" />
+        <img src="logo-mtn.png" alt="MTN Group" class="mx-auto h-10 w-auto object-contain" loading="lazy" />
+        <img src="logo-dsac.png" alt="Department of Sport, Arts and Culture" class="mx-auto h-10 w-auto object-contain" loading="lazy" />
       </div>
-      <p class="text-gray-400 text-sm">Scan to message me directly on WhatsApp</p>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="text-center p-4 text-gray-500 text-sm border-t border-gray-700">
-    &copy; 2025 Moswati the Magician. All rights reserved.
+  <!-- WHITE SPACER -->
+  <div class="bg-white h-16 sm:h-20 md:h-24"></div>
+
+  <!-- FOOTER (Black Bar, Slim to match top bar) -->
+  <footer class="bg-black text-white">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-center text-sm">
+      © 2025 All Rights Reserved – Sponsored by Moswatii the Magician PTY LTD
+    </div>
   </footer>
+
+  <script>
+    // Hide/show topbar on scroll
+    (function () {
+      const topbar = document.getElementById('topbar');
+      let lastY = window.scrollY, ticking = false;
+      function onScroll() {
+        const y = window.scrollY;
+        if (y > lastY && y > 60) {
+          topbar.classList.add('topbar--hidden');
+          topbar.classList.remove('topbar--shown');
+        } else {
+          topbar.classList.remove('topbar--hidden');
+          topbar.classList.add('topbar--shown');
+        }
+        lastY = y; ticking = false;
+      }
+      window.addEventListener('scroll', () => {
+        if (!ticking) { window.requestAnimationFrame(onScroll); ticking = true; }
+      }, { passive: true });
+    })();
+
+    // Overlay menu controls
+    (function () {
+      const body = document.body;
+      const menuOpen = document.getElementById('menuOpen');
+      const menuClose = document.getElementById('menuClose');
+      const overlay = document.getElementById('menuOverlay');
+      const backdrop = document.getElementById('menuBackdrop');
+
+      function openMenu() {
+        overlay.classList.remove('hidden');
+        body.classList.add('no-scroll');
+      }
+      function closeMenu() {
+        overlay.classList.add('hidden');
+        body.classList.remove('no-scroll');
+      }
+
+      menuOpen.addEventListener('click', openMenu);
+      menuClose.addEventListener('click', closeMenu);
+      backdrop.addEventListener('click', closeMenu);
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
+    })();
+  </script>
+
 </body>
 </html>
