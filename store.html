@@ -3,6 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- added -->
+  <link rel="canonical" href="https://moswatithemagician.co.za/store.html" />
+  <meta name="twitter:card" content="summary_large_image">
+
   <title>Store — Moswatii the Magician</title>
   <meta name="description" content="Official Moswatii the Magician merch — logo t-shirts and a signed deck of cards." />
   <script src="https://cdn.tailwindcss.com"></script>
@@ -194,7 +198,7 @@
 
     // WhatsApp buy handler
     function buyWhatsApp(cfg){
-      const waNumber = '27820816192'; // +27 82 081 6192
+      const waNumber = '278208167192'; // +27 82 081 67192
       const qty = cfg.qtyId ? Math.max(1, parseInt(document.getElementById(cfg.qtyId).value || '1', 10)) : 1;
       const size = cfg.sizeId ? document.getElementById(cfg.sizeId).value : null;
       const variant = cfg.variant ? cfg.variant : (cfg.variantId ? document.getElementById(cfg.variantId).value : null);
@@ -216,4 +220,3 @@
   </script>
 </body>
 </html>
-

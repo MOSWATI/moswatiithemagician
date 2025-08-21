@@ -3,8 +3,29 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Check Availability — Moswatii the Magician</title>
-  <meta name="description" content="Booking form to check availability for corporate events." />
+  <!-- added -->
+  <link rel="canonical" href="https://moswatithemagician.co.za/booking.html" />
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- SEO -->
+  <title>Book Moswatii the Magician | Enquiries & Availability</title>
+  <meta name="description" content="Send a booking request for corporate shows, conferences, and school events. Quick response and flexible packages available." />
+
+  <!-- Favicon / App Icons -->
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#000000">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Book Moswatii the Magician | Enquiries & Availability">
+  <meta property="og:description" content="Send a booking request for corporate shows, conferences, and school events. Quick response and flexible packages available.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://moswatithemagician.co.za/booking.html">
+
+  <!-- Assets -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,7 +45,7 @@
 </head>
 <body class="bg-white text-slate-900">
 
-  <!-- TOP NAV BAR with hamburger (same as home) -->
+  <!-- TOP NAV BAR -->
   <header id="topbar" class="topbar topbar--shown sticky top-0 z-50 bg-black/95 text-white">
     <div class="max-w-6xl mx-auto h-16 px-4 grid grid-cols-3 items-center">
       <div></div>
@@ -66,7 +87,7 @@
     </div>
   </div>
 
-  <!-- BOOKING FORM (original styled version that opens email client) -->
+  <!-- BOOKING FORM -->
   <main class="max-w-6xl mx-auto px-4 py-10">
     <div class="max-w-3xl mx-auto">
       <h1 class="text-2xl md:text-3xl font-extrabold tracking-tight text-center">Check Availability</h1>
@@ -74,7 +95,11 @@
 
       <!-- Form Card -->
       <div id="formCard" class="mt-6 bg-white rounded-2xl border border-slate-200 shadow-sm p-6">
-        <form id="bookingForm" class="grid gap-4">
+        <form id="bookingForm" class="grid gap-4" novalidate>
+          <input type="hidden" name="_subject" value="New Booking Request" />
+          <!-- Honeypot (anti-spam) -->
+          <input type="text" name="company" class="hidden" tabindex="-1" autocomplete="off">
+
           <div class="grid gap-2">
             <label class="text-sm font-medium">Full Name *</label>
             <input required name="name" class="px-3 py-2 rounded-xl border border-slate-300" placeholder="Your name" />
@@ -112,21 +137,20 @@
           </div>
 
           <div class="text-center">
-            <button type="submit"
+            <button type="submit" id="submitBtn"
                     class="mt-2 inline-flex items-center justify-center px-7 py-3 rounded-2xl bg-slate-900 text-white font-semibold shadow hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-slate-400">
               Send Request
             </button>
-            <p class="mt-2 text-xs text-slate-500">Submitting opens your email app with all details pre-filled. Just press send.</p>
+            <p class="mt-2 text-xs text-slate-500">Submitting sends your request directly — no email app opens.</p>
           </div>
         </form>
       </div>
 
-      <!-- Thank You Card (hidden until submit) -->
+      <!-- Thank You Card -->
       <div id="thanksCard" class="hidden mt-6 bg-slate-50 rounded-2xl border border-slate-200 p-6 text-center">
-        <h2 class="text-xl font-semibold">Thank you — our agents will contact you.</h2>
+        <h2 class="text-xl font-semibold">Thank you — we’ve received your request.</h2>
         <p class="mt-2 text-slate-600">
-          Your request has been prepared in your email app. If you don’t see it, please check your drafts or compose a new email to
-          <strong>moswatimagic@gmail.com</strong>.
+          We’ll get back to you shortly at the email you provided. If it’s urgent, you can also WhatsApp us.
         </p>
         <div class="mt-4">
           <a href="index.html#home"
@@ -141,7 +165,6 @@
         <h3 class="text-lg font-semibold">Connect now for an inquiry</h3>
         <p class="text-slate-600 mt-1">Scan the WhatsApp QR code to chat instantly.</p>
         <div class="mt-4 flex justify-center">
-          <!-- Smaller, centered QR for phones -->
           <img src="whatsapp-qr.png" alt="WhatsApp QR code"
                class="w-40 sm:w-48 md:w-56 h-auto rounded-xl border border-slate-200 shadow-sm" />
         </div>
@@ -149,7 +172,7 @@
     </div>
   </main>
 
-  <!-- FOOTER (Black Bar, Slim to match top bar) -->
+  <!-- FOOTER -->
   <footer class="bg-black text-white">
     <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-center text-sm">
       © 2025 All Rights Reserved – Sponsored by Moswatii the Magician PTY LTD
@@ -180,7 +203,7 @@
       }, { passive: true });
     })();
 
-    // Menu controls (overlay)
+    // Menu controls
     (function () {
       const body = document.body;
       const menuOpen = document.getElementById('menuOpen');
@@ -197,7 +220,7 @@
       document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
     })();
 
-    // helper: show tiny success toast
+    // helper: toast
     function showToast(message) {
       const toastHost = document.getElementById('toast');
       const el = document.createElement('div');
@@ -212,47 +235,54 @@
       }, 2500);
     }
 
-    // form handler: build a mailto link, show thanks + toast (original behavior)
+    // Background submission via Formspree (no email app opens)
     (function () {
       const form = document.getElementById('bookingForm');
       const formCard = document.getElementById('formCard');
       const thanksCard = document.getElementById('thanksCard');
+      const submitBtn = document.getElementById('submitBtn');
 
-      form.addEventListener('submit', function (e) {
+      // Your Formspree endpoint
+      const ENDPOINT = 'https://formspree.io/f/xjkoqqkd';
+
+      form.addEventListener('submit', async function (e) {
         e.preventDefault();
 
-        const data = new FormData(form);
-        const name = (data.get('name') || '').trim();
-        const email = (data.get('email') || '').trim();
-        const phone = (data.get('phone') || '').trim();
-        const date = (data.get('date') || '').trim();
-        const venue = (data.get('venue') || '').trim();
-        const audience = (data.get('audience') || '').trim();
-        const message = (data.get('message') || '').trim();
+        // Honeypot: if filled, silently ignore
+        const hp = form.querySelector('input[name="company"]');
+        if (hp && hp.value) { showToast('Thanks!'); return; }
 
-        const subject = encodeURIComponent(`Booking Enquiry - ${name || 'Client'} - ${date || ''}`);
-        const body = encodeURIComponent(
-`Name: ${name}
-Email: ${email}
-Phone: ${phone}
-Event Date: ${date}
-Venue/City: ${venue}
-Audience Size: ${audience}
+        if (submitBtn) submitBtn.disabled = true;
+        showToast('Sending...');
 
-Message:
-${message}
+        try {
+          const formData = new FormData(form);
+          const who = (formData.get('name') || 'Client').toString();
+          const when = (formData.get('date') || '').toString();
+          formData.set('_subject', `Booking Enquiry — ${who} — ${when}`);
 
--- sent from moswatithemagician.co.za booking page --`
-        );
+          const res = await fetch(ENDPOINT, {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+          });
 
-        // open email client with pre-filled details
-        window.location.href = `mailto:moswatimagic@gmail.com?subject=${subject}&body=${body}`;
-
-        // UI updates
-        formCard.classList.add('hidden');
-        thanksCard.classList.remove('hidden');
-        thanksCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        showToast('Request prepared in your email app');
+          if (res.ok) {
+            form.reset();
+            formCard.classList.add('hidden');
+            thanksCard.classList.remove('hidden');
+            thanksCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            showToast('Request sent!');
+            // If you prefer a redirect without paying Formspree:
+            // window.location.href = 'thanks.html';
+          } else {
+            showToast('Oops, something went wrong. Please try again.');
+          }
+        } catch (err) {
+          showToast('Network error. Please try again.');
+        } finally {
+          if (submitBtn) submitBtn.disabled = false;
+        }
       });
     })();
   </script>
