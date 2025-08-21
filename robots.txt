@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://moswatithemagician.co.za/sitemap.xml
+Sitemap: https://moswatiithemagician.co.za/sitemap.xml
+
