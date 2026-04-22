@@ -36,7 +36,7 @@
   </script>
 
   <title>Moswati the Magician</title>
-  <meta name="description" content="Transforming Your Events into Magical Experiences" />
+  <meta name="description" content="Corporate Magician in Pretoria Moswatii The Magician" />
   <link rel="icon" href="favicon.png" type="image/png"> <!-- Favicon line added -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,6 +48,8 @@
     .topbar--hidden { transform: translateY(-100%); }
     .topbar--shown  { transform: translateY(0); }
     .no-scroll { overflow: hidden; }
+    .hero-slide {
+  transition: opacity 1.5s ease-in-out;
   </style>
 </head>
 <body class="bg-white text-slate-900">
@@ -107,8 +109,11 @@
   <!-- HERO (image first, then text, then button) -->
   <section id="home" class="max-w-6xl mx-auto px-4 pt-10 pb-14">
     <div class="flex justify-center">
-      <img src="hero-center.png" alt="Moswati the Magician" 
-           class="max-w-full h-auto w-[1100px] md:w-[1200px] lg:w-[1300px] xl:w-[1400px]" />
+  <div class="relative w-full max-w-[1400px] h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden rounded-2xl">
+
+    <img src="hero1.jpg" class="hero-slide absolute inset-0 w-full h-full object-cover opacity-100">
+    <img src="hero2.jpg" class="hero-slide absolute inset-0 w-full h-full object-cover opacity-0">
+    <img src="hero3.jpg" class="hero-slide absolute inset-0 w-full h-full object-cover opacity-0">
     </div>
 
     <div class="mt-8 text-center max-w-3xl mx-auto">
@@ -200,6 +205,18 @@
       backdrop.addEventListener('click', closeMenu);
       document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
     })();
+    (function () {
+  const slides = document.querySelectorAll('.hero-slide');
+  let index = 0;
+
+  if (slides.length === 0) return;
+
+  setInterval(() => {
+    slides[index].style.opacity = 0;
+    index = (index + 1) % slides.length;
+    slides[index].style.opacity = 1;
+  }, 6000);
+})();
   </script>
 
 </body>
